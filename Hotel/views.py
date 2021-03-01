@@ -117,4 +117,5 @@ def HotelFormDeleteView(request,pk):
     cursor.execute(q1,[pk])
     return render(request, 'delete_success.html')
 
-
+class HotelRoyalCentury(TemplateView):
+    template_name = 'hotel_royal_century.html'

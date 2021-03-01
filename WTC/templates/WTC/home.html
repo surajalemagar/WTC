@@ -14,6 +14,7 @@
             <ul class="nav navbar-nav navbar-right">
             {% if user.is_authenticated %}
             <li><a class="navbar-brand " href="">Welcome : {{user.username}}</a></li>
+            <li><a class="navbar-brand " href="{% url 'home' %}">Home</a></li>
             {% else %}
             <li><a class="navbar-brand " href="{% url 'home' %}">Home</a></li>
             {% endif %}
@@ -33,51 +34,53 @@
         </div>
     </nav>
     <br>
+    {% block content %}
     <div class="container">
         <h1>Some Famous Visiting Places of Chitwan</h1>
         <br>
         <h1>1. Chitwan National Park</h1>
-        <img src="{% static 'WTC/cnp1.jpg' %}" alt="cnp1">
+        <img src="{% static 'WTC/cnp1.jpg' %}" alt="cnp1" width="800" height="600">
         <br><br>
-        <p>Chitwan National Park is the first national park in Nepal. It was established in 1973 and granted the status of a World
+        <h5>Chitwan National Park is the first national park in Nepal. It was established in 1973 and granted the status of a World
         Heritage Site in 1984. It covers an area of 952.63 km2 (367.81 sq mi) and is located in the subtropical Inner Terai
         lowlands of south-central Nepal in the districts of Nawalpur, Parsa, Chitwan and Makwanpur. In altitude it ranges from
-        about 100 m (330 ft) in the river valleys to 815 m (2,674 ft) in the Churia Hills.</p>
+        about 100 m (330 ft) in the river valleys to 815 m (2,674 ft) in the Churia Hills.</h5><br>
 
         <h1>2. Narayani Beach</h1>
-        <img src="{% static 'WTC/narayanibeach1.jpg' %}"alt="narayanibeach1">
+        <img src="{% static 'WTC/narayanibeach1.jpg' %}"alt="narayanibeach1"  width="800" height="600">
         <br><br>
-        <p>Chitwan National Park is the first national park in Nepal. It was established in 1973 and granted the status of a
+        <h5>Chitwan National Park is the first national park in Nepal. It was established in 1973 and granted the status of a
             World
             Heritage Site in 1984. It covers an area of 952.63 km2 (367.81 sq mi) and is located in the subtropical Inner Terai
             lowlands of south-central Nepal in the districts of Nawalpur, Parsa, Chitwan and Makwanpur. In altitude it ranges
             from
-            about 100 m (330 ft) in the river valleys to 815 m (2,674 ft) in the Churia Hills.</p>
+            about 100 m (330 ft) in the river valleys to 815 m (2,674 ft) in the Churia Hills.</h5><br>
 
         <h1>3. Bishazari Taal (20 Thousand Lake)</h1>
-        <img src="{% static 'WTC/bishazaritaal1.jpg' %}" alt="bishazaritaal1">
+        <img src="{% static 'WTC/bishazaritaal1.jpg' %}" alt="bishazaritaal1"  width="800" height="600">
         <br><br>
-        <p>20 Thousand Lake Chitwan which is know as 20 Hajar Tal is renowned for Bird Watching place and home of different species
+        <h5>20 Thousand Lake Chitwan which is know as 20 Hajar Tal is renowned for Bird Watching place and home of different species
         of birds along with migrant birds. 20 Thousand Lake is also famous for alternative Jeep Safari when inside National Park
-        Jeep Safari is closed.</p>
+        Jeep Safari is closed.</h5><br>
         
         <h1>4. Jalbire Waterfall</h1>
-        <img src="{% static 'WTC/jalbirewaterfall1.jpg' %}" alt="jalbirewaterfall1">
+        <img src="{% static 'WTC/jalbirewaterfall1.jpg' %}" alt="jalbirewaterfall1"  width="800" height="600">
         <br><br>
-        <p>Jalbire Waterfall (also known as Lamo Jharana) is a popular and beautiful waterfall located in Chabdibhanjyang VDC of
+        <h5>Jalbire Waterfall (also known as Lamo Jharana) is a popular and beautiful waterfall located in Chabdibhanjyang VDC of
         Chitwan district of central Nepal. ... The waterfall is located just about 20 minutes of walk from Jalbire temple
-        situated at Narayangarh-Muglin highway which is about 60 meters tall.</p>
+        situated at Narayangarh-Muglin highway which is about 60 meters tall.</h5><br>
 
         <h1>5. Golaghat</h1>
-        <img src="{% static 'WTC/golaghat1.jpg' %}" alt="golaghat1">
+        <img src="{% static 'WTC/golaghat1.jpg' %}" alt="golaghat1"  width="800" height="600">
         <br><br>
-        <p>Golaghat is around 25 km far from Bharatpur, which is the head quarter of Chitwan district. It is known as one of the
+        <h5>Golaghat is around 25 km far from Bharatpur, which is the head quarter of Chitwan district. It is known as one of the
         richest place of Nepal in terms of wildlife and birds. It lies in the Buffer zone area. Rafters, after their long,
         exciting and adventurous white water trip can come to rest here and witness the diverse wildlife, panoramic views of the
         Himalayas and sunset on the Narayani and Rapti River. Mostly Tharus, Kumal and Bote reside near Golaghat .
         
-        Free Shipping is available ( framing included) worldwide via EMS Service Provided by Nepal post office.</p>
+        Free Shipping is available ( framing included) worldwide via EMS Service Provided by Nepal post office.</h5>
     </div>
+    {% endblock %}
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 </body>

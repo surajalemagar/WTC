@@ -13,5 +13,5 @@ urlpatterns = [
     path('<int:pk>/edit/', views.HotelFormUpdateView,name='hotel_book_edit'),
     path('<int:pk>/update_success/', views.UpdateSuccessView, name='update_success'),
     path('<int:pk>/delete/', views.HotelFormDeleteView,name='hotel_book_delete'),
-    path('about/hotel_royal_century/', views.HotelRoyalCentury.as_view(), name='hotel_royal_century'),
+    path('hotel_form/', views.HotelFormView.as_view(), name='hotel_form'),
 ]
