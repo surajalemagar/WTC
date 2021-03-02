@@ -4,6 +4,7 @@ from django.views import View
 from django.views.generic import TemplateView, DetailView, ListView, UpdateView, DeleteView
 from django.urls import reverse, reverse_lazy
 from django.shortcuts import render, get_object_or_404, redirect
+from django.utils import timezone
 from .models import Feedback
 from .forms import FeedbackForm
 from django.db import connection as cn
@@ -25,8 +26,11 @@ class FeedbackFormView(View):
             data = form.cleaned_data
             cursor = cn.cursor()
             feedback = data['feedback']
-            que = "insert into feedback_feedback(feedback) values (%s);"
-            cursor.execute(que, [feedback])
+            name=""
+            if  request.user.is_authenticated:
+                name=request.user.username
+            que = "insert into feedback_feedback(feedback,name,created_date) values (%s,%s,%s);"
+            cursor.execute(que, [feedback,name,str(timezone.now())])
             return redirect('/feedback/success/')
         return render(request, self.template_name, {'form': form})
 
